@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrainCloud - Learning Made Fun!</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <!-- Animate.css -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/mainPage.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="brand">
+            <i class="fas fa-cloud"></i> Brain Cloud
+        </div>
+        <div class="toggle-nav" id="toggle-nav">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+
+    <nav class="left-nav" id="left-nav">
+        <div class="brand-section">
+            <h1><i class="fas fa-cloud"></i> BrainCloud</h1>
+        </div>
+        <div class="nav-links">
+            <a href="mainPage.html"><i class="fas fa-home"></i>Dashboard</a>
+            <a href="forecast.html"><i class="fas fa-sun"></i>Weather Forecast</a>
+            <a href="dictionary.html"><i class="fas fa-book"></i>Dictionary</a>
+            <a href="quiz.html"><i class="fas fa-gamepad"></i>Quiz</a>
+            <a href="recent_activities.html"><i class="fas fa-road"></i>Recent Activities</a>
+            <a href="profile.html"><i class="fas fa-user-astronaut"></i>Profile</a>
+            <a id="logout-btn"><i class="fas fa-sign-out-alt"></i>Logout</a>
+        </div>
+    </nav>
+    
+    <div class="main-content">
+        <div class="row">
+            <!-- Greeting Card -->
+            <div class="col-md-12">
+                <div class="card greeting-card animate__animated animate__bounceIn">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center">
+                            <span id="greeting-text" class="ms-3 fs-4 fw-bold">
+                                <!-- Greeting message will be inserted here -->
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Weather Card -->
+            <div class="col-md-4">
+                <div class="card weather-card animate__animated animate__fadeInUp">
+                    <i class="fas fa-sun"></i>
+                    <h3>Weather</h3>
+                    <p>Perfect weather for learning!</p>
+                    <button class="btn btn-custom" onclick="location.href='forecast.html'">View</button>
+                </div>
+            </div>
+
+            <!-- Dictionary Card -->
+            <div class="col-md-4">
+                <div class="card feature-card animate__animated animate__fadeInUp">
+                    <i class="fas fa-book-reader"></i>
+                    <h3>Dictionary</h3>
+                    <p>Learn new words every day!</p>
+                    <div class="word-card">
+                        <div id="wordContent">
+                            <div class="loading">Loading word of the day...</div>
+                        </div>
+                        <button class="refresh-btn" onclick="fetchWord()">
+                            <i class="fas fa-sync-alt"></i> Get New Word
+                        </button>
+                    </div>                
+                    <button class="btn btn-custom" onclick="location.href='dictionary.html'">Explore Words</button>
+                </div>
+            </div>
+
+            <!-- Quiz Card -->
+            <div class="col-md-4">
+                <div class="card feature-card animate__animated animate__fadeInUp">
+                    <i class="fas fa-brain"></i>
+                    <h3>Quick Quiz</h3>
+                    <p>Test your knowledge with fun quizzes!</p>
+                    <button class="btn btn-custom" onclick="location.href='quiz.html'">Start Quiz</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/mainPage.js"></script>
+
+    <footer class="footer">
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2024 BrainCloud. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
+
+

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recent Activities</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+   <link rel="stylesheet" href="css/activities.css">
+</head>
+<body>
+    <div id="app">
+        <header class="header">
+            <div class="brand">
+                <i class="fas fa-cloud"></i> Brain Cloud
+            </div>
+            <div class="toggle-nav" id="toggle-nav">
+                <i class="fas fa-bars"></i>
+            </div>
+        </header>
+
+        <nav class="left-nav" id="left-nav">
+            <div class="nav-links">
+                <a href="mainPage.html"><i class="fas fa-home"></i>Dashboard</a>
+                <a href="forecast.html"><i class="fas fa-sun"></i>Weather Forecast</a>
+                <a href="dictionary.html"><i class="fas fa-book"></i>Dictionary</a>
+                <a href="quiz.html"><i class="fas fa-gamepad"></i>Quiz</a>
+                <a href="recent_activities.html"><i class="fas fa-road"></i>Recent Activities</a>
+                <a href="profile.html"><i class="fas fa-user-astronaut"></i>Profile</a>
+                <a id="logout-btn"><i class="fas fa-sign-out-alt"></i>Logout</a>
+            </div>
+        </nav>
+
+        <h1>Recent Activities</h1>
+        <div class="filters">
+            <div class="filter-group">
+                <label for="apiFilter">Filter by API:</label>
+                <select id="apiFilter">
+                    <option value="">All APIs</option>
+                    <option value="Weather API">Weather API</option>
+                    <option value="Dictionary API">Dictionary API</option>
+                    <option value="Quiz API">Quiz API</option>
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <label for="dateFilter">Filter by Date:</label>
+                <input type="date" id="dateFilter">
+            </div>
+            
+            <div class="filter-group">
+                <button id="applyFilters">Apply Filters</button>
+                <button id="clearFilters">Clear Filters</button>
+            </div>
+
+            <div class="export-group">
+                <button id="exportCSV"><i class="fas fa-file-csv"></i> Export as CSV</button>
+                <button id="exportExcel"><i class="fas fa-file-excel"></i> Export as Excel</button>
+            </div>
+        </div>
+
+        <div id="noRecords" class="no-records">No records found for the specified filter criteria.</div>
+
+        <table id="activityTable">
+            <thead>
+                <tr>
+                    <th>Activity ID</th>
+                    <th>API Name</th>
+                    <th>Description</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody id="activityTableBody"></tbody>
+        </table>
+
+        <div id="pagination" class="pagination"></div>
+    </div>
+    <footer class="footer">
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2024 BrainCloud. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="js/recent_activities.js"></script>
+</body>
+</html>

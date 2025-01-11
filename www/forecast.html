@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrainCloud - Weather Forecast</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Custom CSS -->
+    <link href="css/mainPage.css" rel="stylesheet">
+    <style>
+        .btn-primary {
+            background-color: #FF9D3D !important;
+            border: none !important;
+            color: white !important;
+            padding: 15px 30px !important;
+            border-radius: 15px !important;
+            font-family: 'Comic Sans MS', 'Chalkboard SE', sans-serif !important;
+            font-size: 1.0rem !important;
+            font-weight: bold !important;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+            transition: transform 0.2s, background-color 0.3s !important;
+        }
+
+        .btn-primary:hover {
+            background-color: #FFBD73 !important;
+            transform: scale(1.02);
+        }
+
+        .btn-primary:active {
+            transform: scale(0.98);
+        }
+
+        .btn-primary:focus {
+            box-shadow: 0 0 0 0.25rem rgba(255, 157, 61, 0.25) !important;
+        }
+
+        #weather-table {
+            display: none;
+        }
+
+        #weather-table th {
+            background-color: #1B1F3A;
+            color: #E0E0E0;
+        }
+
+        #forecast {
+            padding: 10px;
+            display: none;
+        }
+
+        #forecast h2 {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="brand">
+            <i class="fas fa-cloud"></i> Brain Cloud
+        </div>
+        <div class="toggle-nav" id="toggle-nav">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+
+    <nav class="left-nav" id="left-nav">
+        <div class="brand-section">
+            <h1><i class="fas fa-cloud"></i> BrainCloud</h1>
+        </div>
+        <div class="nav-links">
+            <a href="mainPage.html"><i class="fas fa-home"></i>Dashboard</a>
+            <a href="forecast.html"><i class="fas fa-sun"></i>Weather Forecast</a>
+            <a href="dictionary.html"><i class="fas fa-book"></i>Dictionary</a>
+            <a href="quiz.html"><i class="fas fa-gamepad"></i>Quiz</a>
+            <a href="recent_activities.html"><i class="fas fa-road"></i>Recent Activities</a>
+            <a href="profile.html"><i class="fas fa-user-astronaut"></i>Profile</a>
+            <a id="logout-btn"><i class="fas fa-sign-out-alt"></i>Logout</a>
+        </div>
+    </nav>
+
+    <br>
+
+    <div class="main-content">
+        <div class="row">
+            <!-- Weather Card -->
+            <div class="col-md-4">
+                <div class="card weather-card">
+                    <i class="fas fa-sun"></i>
+                    <h2>Weather Forecast</h2>
+
+                    <!-- Input for city name -->
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" id="city-input" placeholder="Enter City Name"
+                            aria-label="Enter City Name">
+                        <button class="btn btn-primary" id="fetch-weather">Get Weather</button>
+                    </div>
+
+                    <!-- Weather Table -->
+                    <table class="table table-bordered" id="weather-table">
+                        <tbody>
+                            <tr>
+                                <th>Date</th>
+                                <td id="date"></td>
+                            </tr>
+                            <tr>
+                                <th>City</th>
+                                <td id="city"></td>
+                            </tr>
+                            <tr>
+                                <th>Temperature</th>
+                                <td id="temperature"></td>
+                            </tr>
+                            <tr>
+                                <th>Weather</th>
+                                <td id="weather"></td>
+                            </tr>
+                            <tr>
+                                <th>Humidity</th>
+                                <td id="humidity"></td>
+                            </tr>
+                            <tr>
+                                <th>Wind Speed</th>
+                                <td id="wind-speed"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Weather Chart Card -->
+            <div class="col-md-8">
+                <div id="forecast" class="card weather-chart-card">
+                    <h2>Weather Forecast <br>(Next 24 Hours)</h2>
+                    <canvas id="weather-chart" style="height: 400px; width: 100%;"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+
+
+    <footer class="footer">
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2024 BrainCloud. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/weather.js"></script>
+</body>
+
+</html>

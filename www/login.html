@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="title-container">
+            <i class="bi bi-cloud"></i>
+            <h1>Brain Cloud</h1>
+        </div>
+        <h2>LOGIN</h2>
+        <form id="loginForm">
+            <input type="email" id="email" name="email" placeholder="Email" required>
+            <input type="password" id="password" name="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+            <p id="responseMessage"></p>
+        </form>
+        <div class="extra-links">
+            <a href="forgot_password.html" class="forgot-password">Forgot Password?</a>
+            <p>Don't have an account? <a href="register.html" class="register-link">Register here</a></p>
+        </div>
+    </div>
+    <script src="js/login.js"></script>
+</body>
+</html>

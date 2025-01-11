@@ -1,0 +1,114 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #C4E1F6; /* Light blue background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Container */
+.login-container {
+  width: 100%;
+  max-width: 400px;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 25px 20px;
+  text-align: center;
+}
+
+/* Heading */
+h2 {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #FF9D3D;
+}
+
+/* Security Question Styling */
+p {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* Form Styling */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  text-align: left;
+}
+
+label {
+  font-size: 14px;
+  color: #333;
+  font-weight: bold;
+}
+
+input[type='text'] {
+  width: 100%;
+  padding: 12px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  background-color: #fffffc; 
+  transition: all 0.3s ease;
+}
+
+/* Placeholder Styling */
+input::placeholder {
+  font-family: 'Arial', sans-serif;
+  font-size: 14px;
+  color: #999;
+  font-style: italic;
+}
+
+input:focus {
+  border-color: #FF9D3D;
+  box-shadow: 0 0 5px rgba(255, 157, 61, 0.3);
+}
+
+/* Button Styling */
+button {
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  background:#FF9D3D; 
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+button:hover {
+  background: #FFBD73; 
+  transform: scale(1.05);
+}
+
+/* Responsive Design for Mobile */
+@media screen and (max-width: 768px) {
+  .login-container {
+      width: 90%;
+      padding: 20px;
+  }
+
+  h2 {
+      font-size: 20px;
+  }
+
+  button {
+      padding: 10px;
+      font-size: 14px;
+  }
+}

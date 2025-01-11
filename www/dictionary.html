@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrainCloud - Dictionary</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/dictionary.css">
+    <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="brand">
+            <i class="fas fa-cloud"></i> Brain Cloud
+        </div>
+        <div class="toggle-nav" id="toggle-nav">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+
+    <nav class="left-nav" id="left-nav">
+        <div class="nav-links">
+            <a href="mainPage.html"><i class="fas fa-home"></i>Dashboard</a>
+            <a href="forecast.html"><i class="fas fa-sun"></i>Weather Forecast</a>
+            <a href="dictionary.html"><i class="fas fa-book"></i>Dictionary</a>
+            <a href="quiz.html"><i class="fas fa-gamepad"></i>Quiz</a>
+            <a href="recent_activities.html"><i class="fas fa-road"></i>Recent Activities</a>
+            <a href="profile.html"><i class="fas fa-user-astronaut"></i>Profile</a>
+            <a id="logout-btn"><i class="fas fa-sign-out-alt"></i>Logout</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1 class="page-title">Dictionary</h1>
+        <div class="search-box">
+            <div class="input-group">
+                <input type="text" id="wordInput" placeholder="Type any word here..." onkeypress="handleKeyPress(event)">
+                <button onclick="searchWord()">Look it up!</button>
+            </div>
+        </div>
+        <div class="result" id="result"></div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 BrainCloud. All rights reserved.</p>
+    </footer>
+
+    <script src="js/dictionary.js"></script>
+</body>
+</html>

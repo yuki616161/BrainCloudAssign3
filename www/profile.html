@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrainCloud - Profile</title>
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <link href="css/profile.css" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="brand">
+            <i class="fas fa-cloud"></i> Brain Cloud
+        </div>
+        <div class="toggle-nav" id="toggle-nav">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+
+    <nav class="left-nav" id="left-nav">
+        <div class="nav-links">
+            <a href="mainPage.html"><i class="fas fa-home"></i>Dashboard</a>
+            <a href="forecast.html"><i class="fas fa-sun"></i>Weather Forecast</a>
+            <a href="dictionary.html"><i class="fas fa-book"></i>Dictionary</a>
+            <a href="quiz.html"><i class="fas fa-gamepad"></i>Quiz</a>
+            <a href="recent_activities.html"><i class="fas fa-road"></i>Recent Activities</a>
+            <a href="profile.html"><i class="fas fa-user-astronaut"></i>Profile</a>
+            <a id="logout-btn"><i class="fas fa-sign-out-alt"></i>Logout</a>
+        </div>
+    </nav>
+
+    <div class="main-content">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <!-- View Profile Section -->
+                <div class="card profile-card animate__animated animate__fadeIn" id="viewProfile">
+                    <div class="card-body">
+                        <h2 class="card-title text-center mb-4">Profile Information</h2>
+                        <div class="profile-info">
+                            <div class="info-item">
+                                <label>Username:</label>
+                                <span id="displayUsername"></span>
+                            </div>
+                            <div class="info-item">
+                                <label>Email:</label>
+                                <span id="displayEmail"></span>
+                            </div>
+                            <div class="info-item">
+                                <label>Gender:</label>
+                                <span id="displayGender"></span>
+                            </div>
+                            <div class="info-item">
+                                <label>Birthday:</label>
+                                <span id="displayBirthday"></span>
+                            </div>
+                            <div class="text-center mt-4">
+                                <button class="btn btn-custom" id="editButton">Edit Profile</button>
+                            </div>
+
+                            <div class="text-center mt-4">
+                                <button class="btn btn-custom" id="profileLogoutBtn">Log Out</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Edit Profile Section -->
+                <div class="card profile-card animate__animated animate__fadeIn" id="editProfile" style="display: none;">
+                    <div class="card-body">
+                        <h2 class="card-title text-center mb-4">Edit Profile</h2>
+                        <form id="profileForm">
+                            <div class="mb-3">
+                                <label for="username" class="form-label">Username</label>
+                                <input type="text" class="form-control" id="username" name="username" required>
+                                <div class="error-message" id="usernameError"></div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                                <div class="error-message" id="emailError"></div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="gender" class="form-label">Gender</label>
+                                <select class="form-control" id="gender" name="gender" required>
+                                    <option value="">Select Gender</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                    <option value="other">Other</option>
+                                </select>
+                                <div class="error-message" id="genderError"></div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="birthday" class="form-label">Birthday</label>
+                                <input type="date" class="form-control" id="birthday" name="birthday" required>
+                                <div class="error-message" id="birthdayError"></div>
+                            </div>
+
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-custom">Save Changes</button>
+                                <button type="button" class="btn btn-secondary ms-2" id="cancelEdit">Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2024 BrainCloud. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/profile.js"></script>
+</body>
+</html>

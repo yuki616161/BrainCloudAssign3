@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Analysis</title>
+  
+  <link rel="stylesheet" href="css/analysis.css">
+
+  <!-- Bootstrap -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="quiz-container">
+    <h1>Quiz Analysis</h1>
+    <div id="analysis-content"></div>
+    <canvas id="doughnutChart" width="400" height="200"></canvas>
+    <button class="btn btn-primary mt-3" onclick="goBackToQuiz()">Back to Quiz</button>
+  </div>
+
+  <script>
+    // Fetch quiz results from localStorage
+    const results = JSON.parse(localStorage.getItem('quizResults'));
+
+    // Check if results exist
+    if (!results) {
+      document.getElementById('analysis-content').innerHTML = `
+        <p>No quiz data found. Please complete a quiz first!</p>`;
+    } else {
+      // Display summary of results
+      const analysisContent = document.getElementById('analysis-content');
+      analysisContent.innerHTML = `
+        <h2>Category: ${results.categoryName}</h2>
+        <p>Score: ${results.score} / ${results.totalQuestions}</p>
+        <p>Percentage: ${(results.score / results.totalQuestions * 100).toFixed(2)}%</p>
+      `;
+
+      // Prepare data for the doughnut chart
+      const doughnutData = {
+        labels: ['Correct Answers', 'Incorrect Answers'],
+        datasets: [
+          {
+            data: [
+              results.score, 
+              results.totalQuestions - results.score
+            ],
+            backgroundColor: ['rgba(75, 192, 192, 0.6)', 'rgba(255, 99, 132, 0.6)'],
+            borderColor: ['rgba(75, 192, 192, 1)', 'rgba(255, 99, 132, 1)'],
+            borderWidth: 1,
+          },
+        ],
+      };
+
+      // Create the doughnut chart
+      const ctx = document.getElementById('doughnutChart').getContext('2d');
+      new Chart(ctx, {
+        type: 'doughnut',
+        data: doughnutData,
+        options: {
+          responsive: true,
+          plugins: {
+            legend: {
+              display: true,
+              position: 'top',
+            },
+            title: {
+              display: true,
+              text: 'Correct vs. Incorrect Answers',
+            },
+          },
+        },
+      });
+    }
+
+    // Navigate back to the quiz page
+    function goBackToQuiz() {
+      window.location.href = 'quiz.html';
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,240 @@
+:root {
+    --primary-color: #C4E1F6;
+    --accent-color: #FFBD73;
+    --accent-dark: #FF9D3D;
+    --highlight: #FEEE91;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Comic Sans MS', 'Chalkboard SE', sans-serif;
+    background-color: var(--primary-color);
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-top: 70px;
+}
+
+/* Header Styles */
+.header {
+    background-color: var(--accent-dark);
+    color: white;
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1100;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 70px;
+}
+
+.header .brand {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.header .brand i {
+    margin-right: 0.5rem;
+    font-size: 1.8rem;
+}
+
+/* Navigation Styles */
+.toggle-nav {
+    font-size: 1.8rem;
+    color: white;
+    cursor: pointer;
+}
+
+.left-nav {
+    background-color: white;
+    width: 280px;
+    height: calc(100vh - 70px);
+    position: fixed;
+    right: 0;
+    top: 70px;
+    padding: 2rem 0;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    overflow-y: auto;
+}
+
+.left-nav.show {
+    transform: translateX(0);
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-links a {
+    padding: 1rem 2rem;
+    color: #333;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    background-color: var(--primary-color);
+}
+
+.nav-links i {
+    width: 25px;
+}
+
+/* Main Content Styles */
+.main-content {
+    flex: 1;
+    padding: 2rem 1rem;
+    margin-bottom: 60px;
+}
+
+/* Profile Card Styles */
+.profile-card {
+    background: white;
+    border-radius: 20px !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+    border: none !important;
+    margin-bottom: 2rem;
+}
+
+.card-title {
+    color: var(--accent-dark);
+    font-size: 2rem;
+    font-weight: bold;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* Profile Info Styles */
+.profile-info {
+    padding: 1rem;
+}
+
+.info-item {
+    background-color: var(--highlight);
+    padding: 1rem;
+    border-radius: 15px;
+    margin-bottom: 1rem;
+}
+
+.info-item label {
+    font-weight: bold;
+    color: var(--accent-dark);
+    margin-right: 0.5rem;
+}
+
+/* Form Styles */
+.form-control {
+    border: 2px solid var(--accent-color) !important;
+    border-radius: 10px !important;
+    padding: 0.8rem !important;
+    font-size: 1rem !important;
+    transition: all 0.3s ease !important;
+}
+
+.form-control:focus {
+    box-shadow: 0 0 0 0.2rem rgba(255, 157, 61, 0.25) !important;
+    border-color: var(--accent-dark) !important;
+}
+
+.form-label {
+    color: var(--accent-dark);
+    font-weight: bold;
+}
+
+/* Button Styles */
+.btn-custom {
+    background-color: var(--accent-dark) !important;
+    color: white !important;
+    border: none !important;
+    padding: 0.8rem 2rem !important;
+    border-radius: 10px !important;
+    font-weight: bold !important;
+    transition: transform 0.2s, background-color 0.3s !important;
+}
+
+.btn-custom:hover {
+    background-color: var(--accent-color) !important;
+    transform: scale(1.02);
+}
+
+.btn-secondary {
+    background-color: #6c757d !important;
+    color: white !important;
+    border: none !important;
+    padding: 0.8rem 2rem !important;
+    border-radius: 10px !important;
+    font-weight: bold !important;
+    transition: transform 0.2s !important;
+}
+
+.btn-secondary:hover {
+    transform: scale(1.02);
+}
+
+/* Error Message Styles */
+.error-message {
+    color: #dc3545;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: var(--accent-dark);
+    color: white;
+    padding: 1rem 0;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.footer p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .main-content {
+        padding: 1rem;
+    }
+
+    .card-title {
+        font-size: 1.5rem;
+    }
+
+    .btn-custom, .btn-secondary {
+        padding: 0.6rem 1.5rem !important;
+    }
+
+    .info-item {
+        padding: 0.8rem;
+    }
+}
+
+/* Animation Duration Overrides */
+.animate__animated {
+    animation-duration: 0.5s !important;
+}

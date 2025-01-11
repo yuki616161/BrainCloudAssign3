@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trivia Quiz</title>
+  <link rel="stylesheet" href="css/quiz.css">
+  <!-- Bootstrap -->
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+
+   <!-- Font Awesome -->
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+   <!-- Animate.css -->
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+
+</head>
+<body>
+  <div id="app">
+
+    <header class="header">
+      <div class="brand">
+          <i class="fas fa-cloud"></i> Brain Cloud
+      </div>
+      <div class="toggle-nav" id="toggle-nav">
+          <i class="fas fa-bars"></i>
+      </div>
+  </header>
+
+  <nav class="left-nav" id="left-nav">
+    <div class="nav-links">
+        <a href="mainPage.html"><i class="fas fa-home"></i>Dashboard</a>
+        <a href="forecast.html"><i class="fas fa-sun"></i>Weather Forecast</a>
+        <a href="dictionary.html"><i class="fas fa-book"></i>Dictionary</a>
+        <a href="quiz.html"><i class="fas fa-gamepad"></i>Quiz</a>
+        <a href="recent_activities.html"><i class="fas fa-road"></i>Recent Activities</a>
+        <a href="profile.html"><i class="fas fa-user-astronaut"></i>Profile</a>
+        <a id="logout-btn"><i class="fas fa-sign-out-alt"></i>Logout</a>
+    </div>
+</nav>
+    
+    <!-- Category Selection -->
+    <div class="quiz-container" id="category-section">
+      <h1>Trivia Quiz</h1>
+      <select id="category-select">
+        <option value="" disabled selected>Category</option>
+        <option value="9">General Knowledge</option>
+        <option value="21">Sports</option>
+        <option value="23">History</option>
+        <option value="17">Science & Nature</option>
+      </select>
+      <button id="start-btn" onclick="startQuiz()" disabled>Start Quiz</button>
+    </div>
+
+    <!-- Quiz Section -->
+    <div class="quiz-container" id="quiz-section" style="display: none;">
+      <h1>Question</h1>
+      <p id="question"></p>
+      <div class="options-container" id="options-container"></div>
+      <p id="score"></p>
+      <button id="next-btn" disabled>Next</button>
+      <p id="progress"></p>
+    </div>
+    
+    <!-- Result Section -->
+  <div class="quiz-container" id="result-section" style="display: none;">
+  <h1 id="result-title"></h1>
+  <p id="result-message"></p>
+  <button onclick="resetQuiz()">Play Again</button>
+  <button onclick="goToAnalysis()">View Analysis</button>
+</div>
+
+  </div>
+  <script src="js/quiz.js"></script>
+</body>
+
+<footer class="footer">
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2024 BrainCloud. All rights reserved.</p>
+        </div>
+    </footer>
+</html>

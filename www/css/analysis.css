@@ -1,0 +1,159 @@
+:root {
+    --primary-color: #C4E1F6;
+    --accent-color: #FFBD73;
+    --accent-dark: #FF9D3D;
+    --highlight: #FEEE91;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Comic Sans MS', 'Chalkboard SE', sans-serif;
+    background-color: var(--primary-color);
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.quiz-container {
+    background-color: var(--primary-color);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    width: 100%;
+    text-align: center;
+}
+
+h1 {
+    color: var(--accent-dark);
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 0 hsl(0, 53%, 97%);
+    font-family: 'Rubik Bubbles', cursive;
+}
+
+h2 {
+    color: var(--accent-dark);
+    font-size: 1.8rem;
+    margin: 1rem 0;
+}
+
+#analysis-content {
+    background-color: var(--highlight);
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+#analysis-content p {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+    color: #333;
+}
+
+canvas {
+    max-width: 400px;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+}
+
+.btn {
+    padding: 15px 30px !important;
+    background-color: var(--accent-dark) !important;
+    border: none !important;
+    border-radius: 15px !important;
+    color: white !important;
+    font-size: 1.1rem !important;
+    cursor: pointer !important;
+    font-family: inherit !important;
+    font-weight: bold !important;
+    transition: transform 0.2s !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+}
+
+.btn:hover {
+    transform: scale(1.02);
+    background-color: var(--accent-color) !important;
+}
+
+/* Chart customization */
+.chart-container {
+    position: relative;
+    margin: 20px auto;
+    max-width: 400px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .quiz-container {
+        padding: 1rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    #analysis-content p {
+        font-size: 1rem;
+    }
+
+    canvas {
+        max-width: 300px;
+    }
+
+    .btn {
+        padding: 12px 24px !important;
+        font-size: 1rem !important;
+    }
+}
+
+/* Error message styling */
+p:first-child {
+    background-color: var(--highlight);
+    padding: 1rem;
+    border-radius: 10px;
+    color: #666;
+    font-style: italic;
+}
+
+/* Score highlighting */
+p:contains("Score:") {
+    font-weight: bold;
+    color: var(--accent-dark);
+}
+
+/* Percentage highlighting */
+p:contains("Percentage:") {
+    font-weight: bold;
+    color: var(--accent-dark);
+}
+
+/* Animation for chart appearance */
+canvas {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
